@@ -3,9 +3,9 @@ import React, { useState, useEffect,useRef } from 'react';
 import { useRouter } from "next/navigation";
 
 const VRInputComponent = () => {
-    const targetChar = ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
-    ,'omaetensaiyana','darekono','tensaiteki','ge-mutukuttano','ore','wwwwww','nanigawwwyanenn','ahoaka','kocchihasinkennnannya'];
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const targetChar = ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
+,'omaetensaiyana','darekono','tensaiteki','ge-mutukuttano','ore','wwwwww','nanigawwwyanenn','ahoaka','kocchihasinkennnannya']; // 対象の文字列配列 
+ const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [charArray, setCharArray] = useState(targetChar[currentPhraseIndex].split(''));
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -19,10 +19,24 @@ const VRInputComponent = () => {
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
   const missCountRef = useRef(missCount);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
 
 
 
+  useEffect(() => {
+    // オーディオ再生を試みる関数
+    const playAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.play().catch(error => {
+          console.error('Error attempting to play:', error);
+        });
+      }
+    };
+
+    // ページロード時にオーディオを再生
+    playAudio();
+  }, []);
   useEffect(() => {
     setIsRunning(true);
     const timer = setInterval(() => {
@@ -101,6 +115,7 @@ const VRInputComponent = () => {
     const imageRef6 = useRef<HTMLImageElement>(null);
     const imageRef7 = useRef<HTMLImageElement>(null);
     const imageRef8 = useRef<HTMLImageElement>(null);
+    const imageRef9 = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
       const image = imageRef.current;
@@ -147,18 +162,29 @@ const VRInputComponent = () => {
     }, []);
     useEffect(() => {
       const image = imageRef3.current;
-      if (image) {
+      const image2 = imageRef9.current;
+
+      if (image && image2) {
 
         setTimeout(() => {
           image.setAttribute('visible', 'true');
-          
+          image2.setAttribute('visible', 'true');
+
 
           image.setAttribute('animation__position', 'property: position; to: 8 -1 10; dur: 3000; easing: linear; loop: false');
           image.setAttribute('scale', '3 3 3');
 
+          image2.setAttribute('animation__position', 'property: position; to: -8 4 10; dur: 3000; easing: linear; loop: false');
+          image2.setAttribute('scale', '3 3 3');
+
   
           setTimeout(() => {
             image.setAttribute('animation__rotation', 'property: rotation; to: 0 360 360; dur: 3000; easing: linear; loop: true');
+
+          }, 5000);
+          
+          setTimeout(() => {
+            image2.setAttribute('animation__rotation', 'property: rotation; to: 0 360 360; dur: 3000; easing: linear; loop: true');
 
           }, 5000);
           setTimeout(() => {
@@ -227,11 +253,16 @@ const VRInputComponent = () => {
     <a-scene keyboard-shortcuts="enterVR: false; exitVR: false">
 
         <a-camera wasd-controls="enabled: false"></a-camera>
+        <a-assets>
+        <audio id="myAudio" src="/main.mp3" ref={audioRef} autoPlay loop></audio>
+      </a-assets>
 
         <a-assets timeout="10000">
             <img id="my-image" src="/univ.jpeg" />
             <img id="new-image" src="/ham.png" />
             <img id="inseki-image" src="/inseki.png" />
+            <img id="inseki2-image" src="/inseki2.png" />
+
             <img id="nasu-image" src="/nasu.png" />
             <img id="flying-image" src="/susi.png" />
             <img id="input-image" src="/input.png" />
@@ -251,6 +282,7 @@ const VRInputComponent = () => {
         <a-image src="#hito3-image" ref={imageRef6} id="animated-image6" visible={false} position="-5 0 -40" scale="6 6 6"></a-image>
         <a-image src="#hito4-image" ref={imageRef7} id="animated-image7" visible={false} position="10 3 -30" scale="7 7 7"></a-image>
         <a-image src="#new-image" ref={imageRef8} id="animated-image8" visible={false} position="25 6 -20" scale="9 9 9"></a-image>
+        <a-image src="#inseki2-image" ref={imageRef9} id="animated-image9" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
 
         <a-light type="ambient" color="#445451"></a-light>
 
