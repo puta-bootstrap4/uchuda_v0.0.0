@@ -258,18 +258,18 @@ const VRInputComponent = () => {
       </a-assets>
 
         <a-assets timeout="10000">
-            <img id="my-image" src="univ.jpeg" />
-            <img id="new-image" src="ham.png" />
-            <img id="inseki-image" src="inseki.png" />
-            <img id="inseki2-image" src="inseki2.png" />
+            <img id="my-image" src="/univ.jpeg" />
+            <img id="new-image" src="/ham.png" />
+            <img id="inseki-image" src="/inseki.png" />
+            <img id="inseki2-image" src="/inseki2.png" />
 
-            <img id="nasu-image" src="nasu.png" />
-            <img id="flying-image" src="susi.png" />
-            <img id="input-image" src="input.png" />
-            <img id="hito1-image" src="hito1.png" />
-            <img id="hito2-image" src="hito2.png" />
-            <img id="hito3-image" src="hito3.png" />
-            <img id="hito4-image" src="hito4.png" />
+            <img id="nasu-image" src="/nasu.png" />
+            <img id="flying-image" src="/susi.png" />
+            <img id="input-image" src="/input.png" />
+            <img id="hito1-image" src="/hito1.png" />
+            <img id="hito2-image" src="/hito2.png" />
+            <img id="hito3-image" src="/hito3.png" />
+            <img id="hito4-image" src="/hito4.png" />
         </a-assets>
         <a-sky src="#my-image" width="1" height="5"></a-sky>
 
