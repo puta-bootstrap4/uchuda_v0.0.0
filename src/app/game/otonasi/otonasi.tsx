@@ -19,24 +19,10 @@ const VRInputComponent = () => {
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
   const missCountRef = useRef(missCount);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
 
 
 
-  useEffect(() => {
-    // オーディオ再生を試みる関数
-    const playAudio = () => {
-      if (audioRef.current) {
-        audioRef.current.play().catch(error => {
-          console.error('Error attempting to play:', error);
-        });
-      }
-    };
-
-    // ページロード時にオーディオを再生
-    playAudio();
-  }, []);
   useEffect(() => {
     setIsRunning(true);
     const timer = setInterval(() => {
@@ -253,9 +239,6 @@ const VRInputComponent = () => {
     <a-scene keyboard-shortcuts="enterVR: false; exitVR: false">
 
         <a-camera wasd-controls="enabled: false"></a-camera>
-        <a-assets>
-        <audio id="myAudio" src="/main.mp3" ref={audioRef} autoPlay loop></audio>
-      </a-assets>
 
         <a-assets timeout="10000">
             <img id="my-image" src="/univ.jpeg" />
