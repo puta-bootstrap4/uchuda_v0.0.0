@@ -147,8 +147,9 @@ return(
         </Grid>
 
         <Grid xs={12}md={2}>
-            <AdComponent />
-
+            <div className="side-bar" style={{ backgroundImage: `url(${main.src})`}}>
+                <AdComponent />
+            </div>
         </Grid>
 
         <Grid xs={0} md={2}></Grid>
