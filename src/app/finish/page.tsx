@@ -5,6 +5,7 @@ import top from '../../../public/univ.jpeg';
 import main from '../../../public/maincontent.jpeg';
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import AdComponent from '../AdComponent';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -146,9 +147,8 @@ return(
         </Grid>
 
         <Grid xs={12}md={2}>
-            <div className="side-bar" style={{ backgroundImage: `url(${main.src})`}}>
-                <p>広告募集中</p>
-            </div>
+            <AdComponent />
+
         </Grid>
 
         <Grid xs={0} md={2}></Grid>
