@@ -31,7 +31,7 @@ export default function Finish(){
         const fetchData = async () => {
           try {
             // 例えば、フェイクのAPI呼び出し
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 4000));
             // データ取得完了
           } catch (error) {
             console.error("Error loading data", error);

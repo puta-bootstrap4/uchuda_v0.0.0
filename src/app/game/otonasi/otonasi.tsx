@@ -38,21 +38,6 @@ const VRInputComponent = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const assets = document.querySelector('a-assets');
-    
-    const onAssetsLoaded = () => {
-      console.log('All assets are loaded');
-      
-      // シーンの初期化やレンダリングを開始する処理
-    };
-
-    assets.addEventListener('loaded', onAssetsLoaded);
-
-    return () => {
-      assets.removeEventListener('loaded', onAssetsLoaded);
-    };
-  }, []);
 
   useEffect(() => {
     setIsRunning(true);
