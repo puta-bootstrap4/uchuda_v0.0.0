@@ -1,5 +1,5 @@
 
 
-http://okanedaihykka.net/* http://uchuda.netlify.app/:splat 301!
+http://uchuda.netlify.app/* http://okanedaihykka.net/:splat 301!
 
-https://okanedaihykka.net/* https://uchuda.netlify.app/:splat 301!
+https:/uchuda.netlify.app/* https://okanedaihykka.net/:splat 301!
