@@ -2,7 +2,6 @@ import {Button} from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import top from '../../public/univ.jpeg';
 import main from '../../public/maincontent.jpeg';
-import AdComponent from './AdComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Top(){
@@ -79,7 +78,6 @@ return(
         </Grid>
 
         <Grid xs={12}md={2}>
-            <AdComponent />
             <div className="side-bar" style={{ backgroundImage: `url(${main.src})`}}>
             </div>
         </Grid>
