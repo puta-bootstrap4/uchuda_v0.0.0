@@ -2,6 +2,8 @@ import {Button} from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import top from '../../public/univ.jpeg';
 import main from '../../public/maincontent.jpeg';
+import Image from 'next/image';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Top(){
@@ -66,7 +68,7 @@ return(
         <Grid xs={12}md={6}>
             <div className="maincontent" style={{ backgroundImage: `url(${main.src})`}}>
                 <div>
-                    <img src="/inseki.png" className='img-fluid' />
+                    <Image src="/inseki.png" alt="隕石" className='img-fluid' />
                 </div>
                 <div>
                     <p className='description'>Welcome!!<br/>宇宙一ふざけたタイピングアプリをどうぞお試しあれ</p>
