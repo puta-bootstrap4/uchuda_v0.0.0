@@ -32,6 +32,8 @@ const VRInputComponent = () => {
   useEffect(() => {
     setIsRunning(true);
     const timer = setInterval(() => {
+      const timer = setInterval(() => {
+
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
           setIsRunning(false);
@@ -41,7 +43,7 @@ const VRInputComponent = () => {
         return prevTime - 1;
       });
     }, 1000);
-
+  },5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -65,7 +67,7 @@ const VRInputComponent = () => {
       params.append("key2", `${countRef.current}`);
       const href = `/finish/?${params}`;
       router.push(href);
-    }, 41000); // 41秒後に実行
+    }, 46000); // 41秒後に実行
     return () => clearTimeout(timer); // クリーンアップタイムアウト
   }, [router]); // 初回レンダリング時にのみ実行
 
@@ -125,7 +127,7 @@ const VRInputComponent = () => {
           setTimeout(() => {
             image.setAttribute('visible','false');
           }, 9000);
-        }, 3000);
+        }, 8000);
         
       }
     }, []);
@@ -148,7 +150,7 @@ const VRInputComponent = () => {
           setTimeout(() => {
             image.setAttribute('visible','false');
           }, 11000);
-        }, 12001);
+        }, 17001);
         
       }
     }, []);
@@ -182,7 +184,7 @@ const VRInputComponent = () => {
           setTimeout(() => {
             image.setAttribute('visible','false');
           }, 8000);
-        }, 23002);
+        }, 28002);
         
       }
     }, []);
@@ -233,7 +235,7 @@ const VRInputComponent = () => {
 
 
           }, 7000);
-        }, 31003);
+        }, 37003);
         
       }
     }, []);
