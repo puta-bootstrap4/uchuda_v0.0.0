@@ -15,10 +15,8 @@ export default function Gamefunction() {
   const ClientOnlyComponent = dynamic(() => import('../typesin'), { ssr: false });
   return (
     <>
-    <Suspense fallback={"<h1>Loading ...</h1>"}>
     <ClientOnlyComponent />
 
-</Suspense>
     </>
   );
 }

@@ -15,6 +15,10 @@ export default function Finish(){
     const [isLoading, setIsLoading] = useState(true);
 
     const router = useRouter();
+
+
+
+    
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const key1Value = params.get("key1");

@@ -1,3 +1,4 @@
+'use client';
 import { randomInt } from 'crypto';
 import React, { useState, useEffect,useRef } from 'react';
 import { useRouter } from "next/navigation";
@@ -22,21 +23,10 @@ const VRInputComponent = () => {
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
   const missCountRef = useRef(missCount);
-  useEffect(() => {
-    const assets = document.querySelector('a-assets');
-    
-    const onAssetsLoaded = () => {
-      console.log('All assets are loaded');
-      
-      // シーンの初期化やレンダリングを開始する処理
-    };
 
-    assets.addEventListener('loaded', onAssetsLoaded);
 
-    return () => {
-      assets.removeEventListener('loaded', onAssetsLoaded);
-    };
-  }, []);
+
+
 
 
   useEffect(() => {
