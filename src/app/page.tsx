@@ -29,7 +29,7 @@ export default function Gamefunction() {
   }, []);
   if (isLoading) {
     return (
-      <div className="loading-container">
+       <div className="loading-container">
       <div className="spinner"></div>
       <style jsx>{`
         .loading-container {

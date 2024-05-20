@@ -22,9 +22,37 @@ const VRInputComponent = () => {
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
   const missCountRef = useRef(missCount);
+  useEffect(() => {
+    const assets = document.querySelector('a-assets');
+    
+    const onAssetsLoaded = () => {
+      console.log('All assets are loaded');
+      
+      // シーンの初期化やレンダリングを開始する処理
+    };
 
+    assets.addEventListener('loaded', onAssetsLoaded);
 
+    return () => {
+      assets.removeEventListener('loaded', onAssetsLoaded);
+    };
+  }, []);
 
+  useEffect(() => {
+    const assets = document.querySelector('a-assets');
+    
+    const onAssetsLoaded = () => {
+      console.log('All assets are loaded');
+      
+      // シーンの初期化やレンダリングを開始する処理
+    };
+
+    assets.addEventListener('loaded', onAssetsLoaded);
+
+    return () => {
+      assets.removeEventListener('loaded', onAssetsLoaded);
+    };
+  }, []);
 
   useEffect(() => {
     setIsRunning(true);
@@ -244,18 +272,18 @@ const VRInputComponent = () => {
         <a-camera wasd-controls="enabled: false"></a-camera>
 
         <a-assets timeout="10000">
-            <Image id="my-image" src="/univ.jpeg" alt=""/>
-            <Image id="new-image" src="/ham.png" alt=""/>
-            <Image id="inseki-image" src="/inseki.png" alt=""/>
-            <Image id="inseki2-image" src="/inseki2.png" alt=""/>
+            <img id="my-image" src="/univ.jpeg" alt=""/>
+            <img id="new-image" src="/ham.png" alt=""/>
+            <img id="inseki-image" src="/inseki.png" alt=""/>
+            <img id="inseki2-image" src="/inseki2.png" alt=""/>
 
-            <Image id="nasu-image" src="/nasu.png" alt=""/>
-            <Image id="flying-image" src="/susi.png" alt=""/>
-            <Image id="input-image" src="/input.png" alt=""/>
-            <Image id="hito1-image" src="/hito1.png" alt=""/>
-            <Image id="hito2-image" src="/hito2.png" alt=""/>
-            <Image id="hito3-image" src="/hito3.png" alt=""/>
-            <Image id="hito4-image" src="/hito4.png" alt=""/>
+            <img id="nasu-image" src="/nasu.png" alt=""/>
+            <img id="flying-image" src="/susi.png" alt=""/>
+            <img id="input-image" src="/input.png" alt=""/>
+            <img id="hito1-image" src="/hito1.png" alt=""/>
+            <img id="hito2-image" src="/hito2.png" alt=""/>
+            <img id="hito3-image" src="/hito3.png" alt=""/>
+            <img id="hito4-image" src="/hito4.png" alt=""/>
         </a-assets>
         <a-sky src="#my-image" width="1" height="5"></a-sky>
 
