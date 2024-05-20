@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef, useEffect ,useState} from 'react';
+import Image from 'next/image';
 
 const Hoge: React.FC = () => {
   const imageRef = useRef<AFRAME.Entity | null>(null);
@@ -24,7 +25,7 @@ const Hoge: React.FC = () => {
   return (
     <a-scene>
       <a-assets timeout="10000">
-        <img id="my-image" src="boke.jpeg" />
+        <Image id="my-image" src="boke.jpeg" alt=""/>
         <img id="new-image" src="eri.jpeg" />
         <img id="flying-image" src="susi.png" />
 

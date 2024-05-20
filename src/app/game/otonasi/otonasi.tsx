@@ -1,6 +1,7 @@
 import { randomInt } from 'crypto';
 import React, { useState, useEffect,useRef } from 'react';
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 const VRInputComponent = () => {
   const targetChar = ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
@@ -45,7 +46,7 @@ const VRInputComponent = () => {
       setCharArray(targetChar[currentPhraseIndex].split(''));
       setCurrentCharIndex(0); // 新しいフレーズの最初の文字から始める
     }
-  }, [currentPhraseIndex]);
+  }, [currentPhraseIndex,targetChar]);
   useEffect(() => {
     countRef.current = count;
     missCountRef.current = missCount;
@@ -91,7 +92,7 @@ const VRInputComponent = () => {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isRunning, currentCharIndex, charArray, currentPhraseIndex]);
+  }, [isRunning, currentCharIndex, charArray, currentPhraseIndex,targetChar.length]);
   
     const imageRef = useRef<HTMLImageElement>(null);
     const imageRef2 = useRef<HTMLImageElement>(null);
@@ -241,18 +242,18 @@ const VRInputComponent = () => {
         <a-camera wasd-controls="enabled: false"></a-camera>
 
         <a-assets timeout="10000">
-            <img id="my-image" src="/univ.jpeg" />
-            <img id="new-image" src="/ham.png" />
-            <img id="inseki-image" src="/inseki.png" />
-            <img id="inseki2-image" src="/inseki2.png" />
+            <Image id="my-image" src="/univ.jpeg" alt=""/>
+            <Image id="new-image" src="/ham.png" alt=""/>
+            <Image id="inseki-image" src="/inseki.png" alt=""/>
+            <Image id="inseki2-image" src="/inseki2.png" alt=""/>
 
-            <img id="nasu-image" src="/nasu.png" />
-            <img id="flying-image" src="/susi.png" />
-            <img id="input-image" src="/input.png" />
-            <img id="hito1-image" src="/hito1.png" />
-            <img id="hito2-image" src="/hito2.png" />
-            <img id="hito3-image" src="/hito3.png" />
-            <img id="hito4-image" src="/hito4.png" />
+            <Image id="nasu-image" src="/nasu.png" alt=""/>
+            <Image id="flying-image" src="/susi.png" alt=""/>
+            <Image id="input-image" src="/input.png" alt=""/>
+            <Image id="hito1-image" src="/hito1.png" alt=""/>
+            <Image id="hito2-image" src="/hito2.png" alt=""/>
+            <Image id="hito3-image" src="/hito3.png" alt=""/>
+            <Image id="hito4-image" src="/hito4.png" alt=""/>
         </a-assets>
         <a-sky src="#my-image" width="1" height="5"></a-sky>
 
