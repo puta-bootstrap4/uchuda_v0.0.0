@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Finish(){
     const [message, setMessage] = useState("");
     const [message2, setMessage2] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     const router = useRouter();
     useEffect(() => {
@@ -24,6 +25,29 @@ export default function Finish(){
             setMessage2(keyValue2);
           }
       }, []);
+      useEffect(() => {
+        // データの取得や初期化処理をここで行う
+        const fetchData = async () => {
+          try {
+            // 例えば、フェイクのAPI呼び出し
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            // データ取得完了
+          } catch (error) {
+            console.error("Error loading data", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+    
+        fetchData();
+      }, []);
+      if (isLoading) {
+        return (
+          <div className="loading-spinner">
+            Loading...
+          </div>
+        );
+      }
     
 return(
     <>
