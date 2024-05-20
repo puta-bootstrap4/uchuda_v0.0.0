@@ -60,7 +60,7 @@ const VRInputComponent = () => {
       setCharArray(targetChar[currentPhraseIndex].split(''));
       setCurrentCharIndex(0); // 新しいフレーズの最初の文字から始める
     }
-  }, [currentPhraseIndex]);
+  }, [currentPhraseIndex,targetChar]);
   useEffect(() => {
     countRef.current = count;
     missCountRef.current = missCount;
@@ -106,7 +106,7 @@ const VRInputComponent = () => {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isRunning, currentCharIndex, charArray, currentPhraseIndex]);
+  }, [isRunning, currentCharIndex, charArray, currentPhraseIndex,targetChar.length]);
   
     const imageRef = useRef<HTMLImageElement>(null);
     const imageRef2 = useRef<HTMLImageElement>(null);

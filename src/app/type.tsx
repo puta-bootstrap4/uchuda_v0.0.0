@@ -25,7 +25,7 @@ const SingleCharInput: React.FC = () => {
       setCharArray(targetChar[count1].split(''));
       setCount(0);
     }
-  }, [count1]);
+  }, [count1,targetChar]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;

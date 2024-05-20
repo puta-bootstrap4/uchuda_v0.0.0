@@ -26,8 +26,8 @@ const Hoge: React.FC = () => {
     <a-scene>
       <a-assets timeout="10000">
         <Image id="my-image" src="boke.jpeg" alt=""/>
-        <img id="new-image" src="eri.jpeg" />
-        <img id="flying-image" src="susi.png" />
+        <Image id="new-image" src="eri.jpeg" alt=""/>
+        <Image id="flying-image" src="susi.png" alt=""/>
 
       </a-assets>
 
