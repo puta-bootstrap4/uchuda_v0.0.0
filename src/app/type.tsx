@@ -1,7 +1,10 @@
 import React, { useState, ChangeEvent, useEffect, useRef } from 'react';
+import { useMemo } from 'react';
 
 const SingleCharInput: React.FC = () => {
-  const targetChar = ['akagijinto', 'jinto', 'momiji']; // 対象の文字列配列
+  const targetChar = useMemo(() => {
+    return ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
+    ,'omaetensaiyana','darekono','tensaiteki','ge-mutukuttano','ore','wwwwww','nanigawwwyanenn','ahoaka','kocchihasinkennnannya']  }, []);
   const [count1, setCount1] = useState(0); // 現在の文字列のインデックス
   const [charArray, setCharArray] = useState(targetChar[count1].split('')); // 現在の文字列を文字の配列に分割
   const [count, setCount] = useState(0); // 現在の文字のインデックス

@@ -2,10 +2,12 @@ import { randomInt } from 'crypto';
 import React, { useState, useEffect,useRef } from 'react';
 import { useRouter } from "next/navigation";
 import Image from 'next/image';
+import { useMemo } from 'react';
 
 const VRInputComponent = () => {
-  const targetChar = ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
-,'omaetensaiyana','darekono','tensaiteki','ge-mutukuttano','ore','wwwwww','nanigawwwyanenn','ahoaka','kocchihasinkennnannya']; // 対象の文字列配列 
+  const targetChar = useMemo(() => {
+    return ['uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-','koregajinsei','orenodensetu','pugya-','ou','re-suhakurumagadaijiyanai','sonnabananajyu-su'
+    ,'omaetensaiyana','darekono','tensaiteki','ge-mutukuttano','ore','wwwwww','nanigawwwyanenn','ahoaka','kocchihasinkennnannya']  }, []);
  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [charArray, setCharArray] = useState(targetChar[currentPhraseIndex].split(''));
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
