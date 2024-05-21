@@ -15,7 +15,10 @@ export default function Gamefunction() {
   const ClientOnlyComponent = dynamic(() => import('./otonasi'), { ssr: false });
   return (
     <>
+                <Suspense fallback={<h1>Loading...</h1>}>
+
     <ClientOnlyComponent />
+    </Suspense>
 
 </>
   );
