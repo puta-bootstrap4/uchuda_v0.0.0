@@ -5,7 +5,7 @@ import top from '../../../public/univ.jpeg';
 import main from '../../../public/maincontent.jpeg';
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import AdComponent from '../AdComponent';
+import {AdsInFeed} from '../AdComponent';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -69,6 +69,7 @@ return(
             background-color:grey;
             height:1504px;
             border: 2px solid black;
+            padding-top:50px;
         }
         .footer{
             text-align:center;
@@ -106,8 +107,16 @@ return(
         </Grid>
 
         <Grid xs={12}md={2}>
-            <div className="side-bar" style={{ backgroundImage: `url(${main.src})`}}>
-            </div>
+        <div className="side-bar text-center" style={{ backgroundImage: `url(${main.src})`}}>
+                <div>
+                    <img src="/profile.jpg" className='img-fluid'/>
+                </div>
+                <p>
+                    某大学院卒。ITエンジニア（開発）。<br/>トイック・応用情報勉強中。<br/>お問い合わせは<br/>twitterのDMでお願いします。
+                </p>
+                <a href="https://twitter.com/kaburieruuu?ref_src=twsrc%5Etfw" className="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+                <AdsInFeed />
+        </div>
         </Grid>
 
         <Grid xs={0} md={2}></Grid>

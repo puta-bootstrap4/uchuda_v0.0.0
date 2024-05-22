@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+'use client';
+import React, { useEffect } from "react";
+import styles from "./styles.module.css";
 
 declare global {
   interface Window {
@@ -6,57 +8,37 @@ declare global {
   }
 }
 
-const AdComponent: React.FC = () => {
+export const AdsInFeed: React.FC = () => {
   useEffect(() => {
-    const loadAdScript = () => {
-      // 既存のスクリプトを確認
-      const existingScript = document.querySelector('script[src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4549864067149386"]');
-      
-      if (!existingScript) {
-        // 新しいスクリプト要素を作成
-        const script = document.createElement('script');
-        script.setAttribute('src', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4549864067149386');
-        script.setAttribute('async', 'true');
-        script.setAttribute('crossorigin', 'anonymous');
+    const script = document.createElement("script");
+    script.setAttribute("async", "true"); // asyncの設定
+    script.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4549864067149386"); // srcの設定
+    script.setAttribute("crossorigin", "anonymous"); // crossOriginの設定
 
-        script.onerror = () => {
-          console.error("Failed to load the AdSense script");
-        };
+    document.body.appendChild(script);
 
-        document.body.appendChild(script);
-
+    script.onload = () => {
         script.onload = () => {
-          try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (e) {
-            console.error("AdSense script failed to load:", e);
-          }
-        };
-      } else {
-        // 既にスクリプトが存在する場合、そのスクリプトを再利用
-        try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-          console.error("AdSense script failed to load:", e);
-        }
-      }
+            if (window.adsbygoogle && !window.adsbygoogle.loaded) {
+              window.adsbygoogle = window.adsbygoogle || [];
+              window.adsbygoogle.push({});
+            }
+          };
+      };
+    return () => {
+      document.body.removeChild(script);
     };
-
-    loadAdScript();
   }, []);
 
   return (
-    <div>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-4549864067149386"
-        data-ad-slot="6940109643"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+    <div className={styles.adsContainer}>
+    <ins className={`adsbygoogle ${styles.adsInArticle}`}
+      style={{ display: "block" }}
+      data-ad-client="ca-pub-4549864067149386"
+      data-ad-slot="2969075044"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
     </div>
   );
 };
-
-export default AdComponent;
