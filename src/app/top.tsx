@@ -3,6 +3,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import top from '../../public/univ.jpeg';
 import main from '../../public/maincontent.jpeg';
 import React, { useState, useEffect,Suspense } from 'react';
+import {Adsense} from '@ctrl/react-adsense';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -89,6 +90,25 @@ return(
                 </div>
                 <div>
                 <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
+                <Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>
                 </div>
                 <div className='text-center description2'>
                     <p>宇宙打(うちゅうだ)は個人によって開発された無料VRwebアプリケーションです。<br/>日頃の皆様のストレスを発散や<br/>タイピングスキル向上に貢献したいと思い、開発されました。<br/>また、今の時代、プログラミングでこういうゲームも
@@ -111,7 +131,25 @@ return(
                     某大学院卒。ITエンジニア（開発）。<br/>トイック・応用情報勉強中。<br/>お問い合わせは<br/>twitterのDMでお願いします。
                 </p>
                 <a href="https://twitter.com/kaburieruuu?ref_src=twsrc%5Etfw" className="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-
+                <Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>
             </div>
         </Grid>
 
