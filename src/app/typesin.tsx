@@ -53,6 +53,7 @@ const VRInputComponent: React.FC = () => {
   const [missCount, setMissCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+  const [gamestart, setGameStart] = useState("PRESS SPACE KEY  ");
 
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
@@ -93,6 +94,7 @@ const VRInputComponent: React.FC = () => {
       if (event.code === 'Space') {
         setIsRunning(true);
         setTimeLeft(40);
+        setGameStart("");
         if (audioRef.current) {
           audioRef.current.play().catch(error => {
             console.error('Error attempting to play:', error);
@@ -314,6 +316,8 @@ const VRInputComponent: React.FC = () => {
 
       <a-entity position="0 0 0">
         <a-image src="#input-image" width="10" height="2" visible={true} position="0 -0.7 -7"></a-image>
+        <a-text value="Now Interactable" geometry="primitive:plane"></a-text>
+
         {charArray.map((char, index) => (
           <a-text
             key={index}
@@ -345,6 +349,16 @@ const VRInputComponent: React.FC = () => {
             width="6"
           ></a-text>
         )}
+      </a-entity>
+      <a-entity position="0 -3 -3">
+        <a-text
+          value={gamestart}
+          color="yellow"
+          position="0 2.5 0"
+          align="center"
+          width="4"
+          scale="2 2 2"
+        ></a-text>
       </a-entity>
     </a-scene>
   );

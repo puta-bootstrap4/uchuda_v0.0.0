@@ -53,6 +53,7 @@ const VRInputComponent: React.FC = () => {
   const [missCount, setMissCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+  const [gamestart, setGameStart] = useState("PRESS SPACE KEY  ");
 
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
@@ -93,6 +94,7 @@ const VRInputComponent: React.FC = () => {
       if (event.code === 'Space') {
         setIsRunning(true);
         setTimeLeft(40);
+        setGameStart("");
 
 
         // スペースキーが押されたときにページ遷移タイマーを開始
@@ -341,6 +343,16 @@ const VRInputComponent: React.FC = () => {
             width="6"
           ></a-text>
         )}
+      </a-entity>
+      <a-entity position="0 -3 -3">
+        <a-text
+          value={gamestart}
+          color="yellow"
+          position="0 2.5 0"
+          align="center"
+          width="4"
+          scale="2 2 2"
+        ></a-text>
       </a-entity>
     </a-scene>
   );
