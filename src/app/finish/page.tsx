@@ -5,7 +5,7 @@ import top from '../../../public/univ.jpeg';
 import main from '../../../public/maincontent.jpeg';
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import GoogleAdsense from '../AdComponent';
+import {Adsense} from '@ctrl/react-adsense';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -115,8 +115,16 @@ return(
                     某大学院卒。ITエンジニア（開発）。<br/>トイック・応用情報勉強中。<br/>お問い合わせは<br/>twitterのDMでお願いします。
                 </p>
                 <a href="https://twitter.com/kaburieruuu?ref_src=twsrc%5Etfw" className="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-                <GoogleAdsense />
+                <Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>
+
         </div>
+
         </Grid>
 
         <Grid xs={0} md={2}></Grid>

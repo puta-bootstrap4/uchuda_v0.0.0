@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react';
+import {Adsense} from '@ctrl/react-adsense';
+export default function Hoe(){
+return (
+// ads with no set-up
+<Adsense
+  client="ca-pub-7640562161899788"
+  slot="7259870550"
+/>
 
-class GoogleAdsense extends React.Component {
-    constructor(props:any) {
-      super(props);
-    }
+// ads with custom format
+<Adsense
+  client="ca-pub-7640562161899788"
+  slot="7259870550"
+  style={{ width: 500, height: 300 }}
+  format=""
+/>
 
-    componentDidMount(){
+// responsive and native ads
+<Adsense
+  client="ca-pub-7640562161899788"
+  slot="7259870550"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>);
 
-      // Push the ad when the script is loaded
-    
-        window.adsbygoogle = window.adsbygoogle || [];
-        window.adsbygoogle.push({});
-      
-    }
-
-    render(){
-        return (
-            <ins className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-4549864067149386"
-                data-ad-slot="2969075044"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-            ></ins>
-        );
-    }
 }
-
-export default GoogleAdsense;
