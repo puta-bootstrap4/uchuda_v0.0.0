@@ -101,25 +101,7 @@ return(
                     <p>&copy; 2024 宇宙打(うちゅうだ). All rights reserved.</p>
                     <p>このサイトの内容、テキスト、画像、動画などすべての著作物は、著作権法により保護されています。<br/>無断での複製、転載、再配布を禁じます。</p>
                 </footer>
-                <Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
-/><Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
-/><Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
-/>
+
             </div>
         </Grid>
 
