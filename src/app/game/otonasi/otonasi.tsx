@@ -39,7 +39,7 @@ const VRInputComponent: React.FC = () => {
   const targetChar = useMemo(() => {
     return [
       'uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-', 'koregajinsei', 'orenodensetu', 'pugya-', 'ou', 're-suhakurumagadaijiyanai', 'sonnabananajyu-su',
-      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoaka', 'kocchihasinkennnannya'
+      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoka', 'kocchihasinkennnannya'
     ];
   }, []);
 
@@ -59,6 +59,7 @@ const VRInputComponent: React.FC = () => {
   const countRef = useRef(count);
   const missCountRef = useRef(missCount);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const imageRef = useRef<HTMLImageElement>(null);
   const imageRef2 = useRef<HTMLImageElement>(null);
   const imageRef3 = useRef<HTMLImageElement>(null);

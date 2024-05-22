@@ -39,7 +39,7 @@ const VRInputComponent: React.FC = () => {
   const targetChar = useMemo(() => {
     return [
       'uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-', 'koregajinsei', 'orenodensetu', 'pugya-', 'ou', 're-suhakurumagadaijiyanai', 'sonnabananajyu-su',
-      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoaka', 'kocchihasinkennnannya'
+      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoka', 'kocchihasinkennnannya'
     ];
   }, []);
 
@@ -54,6 +54,7 @@ const VRInputComponent: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const [gamestart, setGameStart] = useState("PRESS SPACE KEY  ");
+  const audioRef2 = useRef<HTMLAudioElement | null>(null);
 
   // 最新のcountとmissCountを保持するref
   const countRef = useRef(count);
@@ -68,6 +69,28 @@ const VRInputComponent: React.FC = () => {
   const imageRef7 = useRef<HTMLImageElement>(null);
   const imageRef8 = useRef<HTMLImageElement>(null);
   const imageRef9 = useRef<HTMLImageElement>(null);
+
+
+    useEffect(() => {
+    const handleKeyPress = () => {
+      if (audioRef2.current) {
+        // Restart the audio
+        audioRef2.current.currentTime = 0;
+        audioRef2.current.play();
+      }
+    };
+
+    // Add event listener for keypress
+    window.addEventListener('keydown', handleKeyPress);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+
+
 
   useEffect(() => {
     const handleLoad = () => {
@@ -285,6 +308,8 @@ const VRInputComponent: React.FC = () => {
       <a-camera wasd-controls="enabled: false"></a-camera>
       <a-assets>
         <audio id="myAudio" src="/main.mp3" ref={audioRef} loop></audio>
+        <audio id="myAudio2" src="/type.mp3" ref={audioRef2} loop></audio>
+
       </a-assets>
 
       <a-assets timeout="10000">
