@@ -90,6 +90,17 @@ return(
                 </div>
                 <div>
                 <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
+
+                </div>
+                <div className='text-center description2'>
+                    <p>宇宙打(うちゅうだ)は個人によって開発された無料VRwebアプリケーションです。<br/>日頃の皆様のストレスを発散や<br/>タイピングスキル向上に貢献したいと思い、開発されました。<br/>また、今の時代、プログラミングでこういうゲームも
+                        作れるということを伝えたいです。<br/>最後になりましたが、プログラミングに関心を持っていただけたら最高です。
+                    </p>
+                </div>
+                <footer>
+                    <p>&copy; 2024 宇宙打(うちゅうだ). All rights reserved.</p>
+                    <p>このサイトの内容、テキスト、画像、動画などすべての著作物は、著作権法により保護されています。<br/>無断での複製、転載、再配布を禁じます。</p>
+                </footer>
                 <Adsense
   client="ca-pub-4549864067149386"
   slot="2969075044"
@@ -109,16 +120,6 @@ return(
   layout="in-article"
   format="fluid"
 />
-                </div>
-                <div className='text-center description2'>
-                    <p>宇宙打(うちゅうだ)は個人によって開発された無料VRwebアプリケーションです。<br/>日頃の皆様のストレスを発散や<br/>タイピングスキル向上に貢献したいと思い、開発されました。<br/>また、今の時代、プログラミングでこういうゲームも
-                        作れるということを伝えたいです。<br/>最後になりましたが、プログラミングに関心を持っていただけたら最高です。
-                    </p>
-                </div>
-                <footer>
-                    <p>&copy; 2024 宇宙打(うちゅうだ). All rights reserved.</p>
-                    <p>このサイトの内容、テキスト、画像、動画などすべての著作物は、著作権法により保護されています。<br/>無断での複製、転載、再配布を禁じます。</p>
-                </footer>
             </div>
         </Grid>
 

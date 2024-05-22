@@ -103,6 +103,25 @@ return(
                 <div>
                     <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/" variant="contained" color="primary">HOME</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
                 </div>
+                <Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>
             </div>
         </Grid>
 
@@ -116,6 +135,19 @@ return(
                 </p>
                 <a href="https://twitter.com/kaburieruuu?ref_src=twsrc%5Etfw" className="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 <Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/>
+<Adsense
+  client="ca-pub-4549864067149386"
+  slot="2969075044"
+  style={{ display: 'block' }}
+  layout="in-article"
+  format="fluid"
+/><Adsense
   client="ca-pub-4549864067149386"
   slot="2969075044"
   style={{ display: 'block' }}
