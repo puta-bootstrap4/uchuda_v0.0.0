@@ -308,7 +308,7 @@ const VRInputComponent: React.FC = () => {
       <a-camera wasd-controls="enabled: false"></a-camera>
       <a-assets>
         <audio id="myAudio" src="/main.mp3" ref={audioRef} loop></audio>
-        <audio id="myAudio2" src="/type.mp3" ref={audioRef2} loop></audio>
+        <audio id="myAudio2" src="/type.mp3" ref={audioRef2}></audio>
 
       </a-assets>
 
