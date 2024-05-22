@@ -62,12 +62,12 @@ return(
             padding:3px 3px 3px 3px;
             text-align:center;
             background-color:grey;
-            height:1498px;
+            height:3000px;
         }
         .side-bar{
             color:white;
             background-color:grey;
-            height:1504px;
+            height:3000px;
             border: 2px solid black;
             padding-top:50px;
         }
@@ -100,7 +100,7 @@ return(
                     <p>ミスタイプ数は{message}です</p>
                     <p>得点は{message2}です</p>
                 </div>
-                <div>
+                <div className='mb-3'>
                     <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/" variant="contained" color="primary">HOME</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
                 </div>
                 <Adsense
