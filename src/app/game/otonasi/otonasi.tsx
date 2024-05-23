@@ -269,6 +269,36 @@ const VRInputComponent: React.FC = () => {
  
         }, 20004);
       }
+
+      if (image4) {
+        setTimeout(() => {
+          image4.setAttribute('visible', 'true');
+
+          image4.setAttribute('scale', '3 3 3');
+
+
+          setTimeout(() => {
+            image4.setAttribute('animation__position', 'property: position; to: -10 -4 -10; dur: 3000; easing: linear; loop: false');
+  
+   
+          }, 2001);
+
+          
+
+          setTimeout(() => {
+            image4.setAttribute('animation__position', 'property: position; to: 5 4 -10; dur: 3000; easing: linear; loop: false');
+  
+   
+          }, 5001);
+
+          setTimeout(() => {
+            image4.setAttribute('animation__position', 'property: position; to: 5 4 50; dur: 3000; easing: linear; loop: false');
+
+  
+   
+          }, 8001);
+        }, 22004);
+      }
  
     };
 
