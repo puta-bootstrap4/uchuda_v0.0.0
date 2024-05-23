@@ -38,8 +38,8 @@ const loadingSpinner = (
 const VRInputComponent: React.FC = () => {
   const targetChar = useMemo(() => {
     return [
-      'uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-', 'koregajinsei', 'orenodensetu', 'pugya-', 'ou', 're-suhakurumagadaijiyanai', 'sonnabananajyu-su',
-      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoka', 'kocchihasinkennnannya'
+      'uchukita-', 'bokenasukita-', 'kusahukahi', 'kusoge-', 'koregajinsei', 'orenodensetu', 'pugya-', 'ou', 're-suhakuruma', 'sonnabanana',
+      'omaetensaiyana', 'darekono', 'tensaiteki', 'ge-mutukuttano', 'ore', 'wwwwww', 'nanigawwwyanenn', 'ahoka', 'sinkendesu'
     ];
   }, []);
 
@@ -218,80 +218,82 @@ const VRInputComponent: React.FC = () => {
       const image8 = imageRef8.current;
       const image9 = imageRef9.current;
 
-      if (image1) {
-        setTimeout(() => {
-          image1.setAttribute('visible', 'true');
-          image1.setAttribute('animation__position', 'property: position; to: 0 2 -7; dur: 300; easing: linear; loop: false');
-          setTimeout(() => {
-            image1.setAttribute('animation__rotation', 'property: rotation; to: 0 360 0; dur: 300; easing: linear; loop: true');
-          }, 5000);
-          setTimeout(() => {
-            image1.setAttribute('visible', 'false');
-          }, 9000);
-        }, 4000);
-      }
-
-      if (image2) {
+      if (image2 && image3 && image9) {
         setTimeout(() => {
           image2.setAttribute('visible', 'true');
-          image2.setAttribute('animation__position', 'property: position; to: -8 -1 -6; dur: 6000; easing: linear; loop: false');
+          image2.setAttribute('animation__position', 'property: position; to: -8 -1 10; dur: 4000; easing: linear; loop: false');
           image2.setAttribute('scale', '3 3 3');
-          setTimeout(() => {
-            image2.setAttribute('animation__rotation', 'property: rotation; to: 0 360 360; dur: 6000; easing: linear; loop: true');
-          }, 5000);
-          setTimeout(() => {
-            image2.setAttribute('visible', 'false');
-          }, 11000);
-        }, 13001);
-      }
-
-      if (image3 && image9) {
-        setTimeout(() => {
           image3.setAttribute('visible', 'true');
           image9.setAttribute('visible', 'true');
           image3.setAttribute('animation__position', 'property: position; to: 8 -1 10; dur: 3000; easing: linear; loop: false');
           image3.setAttribute('scale', '3 3 3');
           image9.setAttribute('animation__position', 'property: position; to: -8 4 10; dur: 3000; easing: linear; loop: false');
           image9.setAttribute('scale', '3 3 3');
+
           setTimeout(() => {
-            image3.setAttribute('animation__rotation', 'property: rotation; to: 0 360 360; dur: 3000; easing: linear; loop: true');
-            image9.setAttribute('animation__rotation', 'property: rotation; to: 0 360 360; dur: 3000; easing: linear; loop: true');
-          }, 5000);
-          setTimeout(() => {
-            image3.setAttribute('visible', 'false');
-          }, 8000);
-        }, 24002);
+            image2.setAttribute('visible', 'false');
+          }, 8001);
+        }, 1000);
       }
 
-      if (image4 && image5 && image6 && image7 && image8) {
+
+
+      if (image1) {
         setTimeout(() => {
+          image1.setAttribute('visible', 'true');
+          image1.setAttribute('animation__position', 'property: position; to: 0 2 -7; dur: 300; easing: linear; loop: false');
           setTimeout(() => {
-            image4.setAttribute('visible', 'true');
-          }, 500);
-          setTimeout(() => {
-            image5.setAttribute('visible', 'true');
+            image1.setAttribute('animation__rotation', 'property: rotation; to: 0 360 0; dur: 300; easing: linear; loop: true');
+
           }, 1000);
+          
           setTimeout(() => {
-            image6.setAttribute('visible', 'true');
-          }, 1500);
-          setTimeout(() => {
-            image7.setAttribute('visible', 'true');
-          }, 2000);
-          setTimeout(() => {
-            image8.setAttribute('visible', 'true');
-          }, 2500);
-          setTimeout(() => {
-            image8.setAttribute('animation__rotation', 'property: rotation; to: 0 360 0; dur: 300; easing: linear; loop: true');
+            image1.setAttribute('visible', 'false');
           }, 3000);
-          setTimeout(() => {
-            image4.setAttribute('visible', 'false');
-            image5.setAttribute('visible', 'false');
-            image6.setAttribute('visible', 'false');
-            image7.setAttribute('visible', 'false');
-            image8.setAttribute('visible', 'false');
-          }, 7000);
-        }, 31003);
+        }, 8002);
       }
+
+    
+
+
+
+      if (image5) {
+        setTimeout(() => {
+          image5.setAttribute('visible', 'true');
+          image5.setAttribute('scale', '10 10 10');
+
+          setTimeout(() => {
+            image5.setAttribute('animation__position', 'property: position; to: 35 4 -200; dur: 8000; easing: linear; loop: false');
+  
+   
+          }, 1000);
+
+          setTimeout(() => {
+            image5.setAttribute('visible', 'false');
+  
+   
+          }, 9001);
+ 
+        }, 11002);
+      }
+
+
+      if (image6) {
+        setTimeout(() => {
+          image6.setAttribute('visible', 'true');
+
+          image6.setAttribute('scale', '10 10 10');
+
+
+          setTimeout(() => {
+            image6.setAttribute('visible', 'false');
+  
+   
+          }, 2001);
+ 
+        }, 20004);
+      }
+ 
     };
 
     if (isRunning) {
@@ -317,23 +319,22 @@ const VRInputComponent: React.FC = () => {
         <img id="new-image" src="/ham.png" alt="" />
         <img id="inseki-image" src="/inseki.png" alt="" />
         <img id="inseki2-image" src="/inseki2.png" alt="" />
-        <img id="nasu-image" src="/nasu.png" alt="" />
+        <img id="nasu-image" src="/uchuhuku.png" alt="" />
         <img id="flying-image" src="/susi.png" alt="" />
         <img id="input-image" src="/input.png" alt="" />
-        <img id="hito1-image" src="/hito1.png" alt="" />
-        <img id="hito2-image" src="/hito2.png" alt="" />
-        <img id="hito3-image" src="/hito3.png" alt="" />
-        <img id="hito4-image" src="/hito4.png" alt="" />
+        <img id="ufo-image" src="/ufo.png" alt="" />
+        <img id="ship-image" src="/ship.png" alt="" />
+
       </a-assets>
       <a-sky src="#my-image" width="1" height="5"></a-sky>
 
       <a-image src="#new-image" ref={imageRef} id="animated-image" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
       <a-image src="#nasu-image" ref={imageRef2} id="animated-image2" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
       <a-image src="#inseki-image" ref={imageRef3} id="animated-image3" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
-      <a-image src="#hito1-image" ref={imageRef4} id="animated-image4" visible={false} position="-35 -6 -60" scale="4 4 4"></a-image>
-      <a-image src="#hito2-image" ref={imageRef5} id="animated-image5" visible={false} position="-20 -3 -50" scale="5 5 5"></a-image>
-      <a-image src="#hito3-image" ref={imageRef6} id="animated-image6" visible={false} position="-5 0 -40" scale="6 6 6"></a-image>
-      <a-image src="#hito4-image" ref={imageRef7} id="animated-image7" visible={false} position="10 3 -30" scale="7 7 7"></a-image>
+      <a-image src="#ufo-image" ref={imageRef4} id="ufo-image" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
+      <a-image src="#ship-image" ref={imageRef5} id="ufo-image" visible={false} position="0 0 50" scale="1 1 1"></a-image>
+      <a-image src="#flying-image" ref={imageRef6} id="flying-image" visible={false} position="0 0 -60" scale="1 1 1"></a-image>
+
       <a-image src="#new-image" ref={imageRef8} id="animated-image8" visible={false} position="25 6 -20" scale="9 9 9"></a-image>
       <a-image src="#inseki2-image" ref={imageRef9} id="animated-image9" visible={false} position="0 0 -60" scale="3 3 3"></a-image>
 
