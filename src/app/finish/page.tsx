@@ -101,7 +101,7 @@ return(
                     <p>得点は{message2}です</p>
                 </div>
                 <div className='mb-3'>
-                    <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/" variant="contained" color="primary">HOME</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
+                    <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/" variant="contained" color="primary">HOME</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
                 </div>
                 <Adsense
   client="ca-pub-4549864067149386"

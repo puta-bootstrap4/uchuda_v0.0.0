@@ -89,7 +89,7 @@ return(
                     <p className='description'>Welcome!!<br/>宇宙一ふざけたタイピングアプリをどうぞお試しあれ</p>
                 </div>
                 <div>
-                <Button href="/game" variant="contained" color="primary">音ありでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY</Button>
+                <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
 
                 </div>
                 <div className='text-center description2'>
