@@ -86,10 +86,10 @@ return(
                     <p className='description'>Welcome!!<br/>宇宙一ふざけたタイピングアプリをどうぞお試しあれ</p>
                 </div>
                 <div>
-                    <p id="text-color">注意:ゲームの読み込みに30秒くらいかかりますが、ご了承ください</p>
+                    <p id="text-color">注意:ゲームの読み込みに30秒くらいかかりますが、ご了承ください<br/>30秒たっても表示されない場合は、ページを再読み込みしてください。</p>
                 </div>
                 <div>
-                <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
+                <Button href="/game" variant="contained" color="primary">音ありでPLAY(PCのみ)</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPLAY(PCのみ)</Button><Button href="/movie?play=true" variant="contained" color="secondary">映像のみ音あり(スマホ・PC)</Button><Button href="/movie/otonasi" variant="contained" color="secondary">映像のみ音なし(スマホ・PC)</Button>
                 <Adsense
                     client="ca-pub-4549864067149386"
                     slot="2969075044"

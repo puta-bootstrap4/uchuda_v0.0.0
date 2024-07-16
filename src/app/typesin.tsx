@@ -249,7 +249,7 @@ const VRInputComponent: React.FC = () => {
           
           setTimeout(() => {
             image1.setAttribute('visible', 'false');
-          }, 3000);
+          }, 5000);
         }, 8002);
       }
 
@@ -274,7 +274,7 @@ const VRInputComponent: React.FC = () => {
    
           }, 9001);
  
-        }, 11002);
+        }, 13002);
       }
 
 
@@ -289,9 +289,9 @@ const VRInputComponent: React.FC = () => {
             image6.setAttribute('visible', 'false');
   
    
-          }, 2001);
+          }, 4001);
  
-        }, 20004);
+        }, 22004);
       }
  
 
@@ -323,7 +323,7 @@ const VRInputComponent: React.FC = () => {
   
    
           }, 8001);
-        }, 22004);
+        }, 26004);
       }
 
     };
