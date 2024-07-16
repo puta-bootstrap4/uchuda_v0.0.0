@@ -67,6 +67,7 @@ return(
         #text-color{
             color:yellow;
             padding-top:60px;
+            padding-bottom:60px;
         }
     `}
     </style>
@@ -85,10 +86,10 @@ return(
                     <p className='description'>Welcome!!<br/>宇宙一ふざけたタイピングアプリをどうぞお試しあれ</p>
                 </div>
                 <div>
-                <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
-                <div>
                     <p id="text-color">注意:ゲームの読み込みに30秒くらいかかりますが、ご了承ください</p>
                 </div>
+                <div>
+                <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
                 <Adsense
                     client="ca-pub-4549864067149386"
                     slot="2969075044"
