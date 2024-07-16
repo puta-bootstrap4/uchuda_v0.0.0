@@ -44,7 +44,7 @@ return(
             padding:3px 3px 3px 3px;
             text-align:center;
             background-color:grey;
-            height:1498px;
+            height:auto;
         }
         .side-bar{
             color:white;
@@ -59,29 +59,25 @@ return(
         }
         .description2{
             color:white;
-            padding-top:100px;
         }
         footer{
             color:white;
             padding-top:200px;
         }
+        #text-color{
+            color:yellow;
+            padding-top:60px;
+        }
     `}
     </style>
-    <Grid container>
+    <Grid container style={{ backgroundImage: `url(${top.src})`}}>
         <Grid xs={0} md={2}></Grid>
-        <Grid xs={12} md={8}>
-            <div className="header" style={{ backgroundImage: `url(${top.src})`}}>
-                <p className='title'>タイピングゲーム:宇宙打</p>
-            </div>
-            <div>
 
-            </div>
-        </Grid>
         <Grid xs={0} md={2}></Grid>
         <Grid xs={0} md={2}>
         </Grid>
-        <Grid xs={12}md={6}>
-            <div className="maincontent" style={{ backgroundImage: `url(${main.src})`}}>
+        <Grid xs={12}md={12}>
+            <div className="maincontent" style={{ backgroundImage: `url(${top.src})`}}>
                 <div>
                     <img src="/inseki.png" alt="隕石" className='img-fluid' />
                 </div>
@@ -90,7 +86,16 @@ return(
                 </div>
                 <div>
                 <Button href="/game" variant="contained" color="primary">音ありでPCでPLAY</Button><Button href="/game/otonasi" variant="contained"  color="primary">音なしでPCでPLAY</Button>
-
+                <div>
+                    <p id="text-color">注意:ゲームの読み込みに30秒くらいかかりますが、ご了承ください</p>
+                </div>
+                <Adsense
+                    client="ca-pub-4549864067149386"
+                    slot="2969075044"
+                    style={{ display: 'block' }}
+                    layout="in-article"
+                    format="fluid"
+                />
                 </div>
                 <div className='text-center description2'>
                     <p>宇宙打(うちゅうだ)は個人によって開発された無料VRwebアプリケーションです。<br/>日頃の皆様のストレスを発散や<br/>タイピングスキル向上に貢献したいと思い、開発されました。<br/>また、今の時代、プログラミングでこういうゲームも
@@ -105,24 +110,7 @@ return(
             </div>
         </Grid>
 
-        <Grid xs={12}md={2}>
-            <div className="side-bar text-center" style={{ backgroundImage: `url(${main.src})`}}>
-                <div>
-                    <img src="/profile.jpg" className='img-fluid'/>
-                </div>
-                <p>
-                    某大学院卒。ITエンジニア（開発）。<br/>トイック・応用情報勉強中。<br/>お問い合わせは<br/>twitterのDMでお願いします。
-                </p>
-                <a href="https://twitter.com/kaburieruuu?ref_src=twsrc%5Etfw" className="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-                <Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
-/>
-            </div>
-        </Grid>
+
 
         <Grid xs={0} md={2}></Grid>
         <Grid xs={0} md={2}></Grid>
