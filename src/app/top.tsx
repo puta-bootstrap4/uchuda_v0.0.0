@@ -120,18 +120,6 @@ return(
   style={{ display: 'block' }}
   layout="in-article"
   format="fluid"
-/><Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
-/><Adsense
-  client="ca-pub-4549864067149386"
-  slot="2969075044"
-  style={{ display: 'block' }}
-  layout="in-article"
-  format="fluid"
 />
             </div>
         </Grid>
