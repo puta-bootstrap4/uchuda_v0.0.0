@@ -69,6 +69,12 @@ const VRInputComponent: React.FC = () => {
         setIsRunning(true);
         setTimeLeft(40);
         setGameStart("");
+        if (isRunning === true) {
+          setUpAnimations();
+          CountDown();
+        } else {
+          router.push(href);
+        }
         if (audioRef.current && searchParams.get("playSound") === "true") {
           audioRef.current.play().catch((error) => {
             console.error("Error attempting to play:", error);
@@ -107,8 +113,7 @@ const VRInputComponent: React.FC = () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
-
-  useEffect(() => {
+  const CountDown = () => {
     if (isRunning) {
       const countdownTimer = setInterval(() => {
         setTimeLeft((prevTime) => {
@@ -125,7 +130,7 @@ const VRInputComponent: React.FC = () => {
         clearInterval(countdownTimer);
       };
     }
-  }, [isRunning, router]);
+  };
 
   useEffect(() => {
     if (isRunning) {
@@ -147,7 +152,7 @@ const VRInputComponent: React.FC = () => {
               setCurrentPhraseIndex((prevcurrent) => prevcurrent + 1);
               setCurrentCharIndex(0); // 新しいフレーズの最初の文字から始める
             } else {
-              setIsRunning(false);
+              router.push(href);
             }
           } //ここにelseを書く時、その条件はまだ最後まで単語を入力し終えてない。
         } else {
@@ -165,133 +170,124 @@ const VRInputComponent: React.FC = () => {
     countRef.current = count;
     missCountRef.current = missCount;
   }, [count, missCount]);
+  const setUpAnimations = () => {
+    // アニメーションを設定する関数
+    const image1 = imageRef.current;
+    const image2 = imageRef2.current;
+    const image3 = imageRef3.current;
+    const image4 = imageRef4.current;
+    const image5 = imageRef5.current;
+    const image6 = imageRef6.current;
+    const image7 = imageRef7.current;
+    const image8 = imageRef8.current;
+    const image9 = imageRef9.current;
 
-  useEffect(() => {
-    const setUpAnimations = () => {
-      // アニメーションを設定する関数
-      const image1 = imageRef.current;
-      const image2 = imageRef2.current;
-      const image3 = imageRef3.current;
-      const image4 = imageRef4.current;
-      const image5 = imageRef5.current;
-      const image6 = imageRef6.current;
-      const image7 = imageRef7.current;
-      const image8 = imageRef8.current;
-      const image9 = imageRef9.current;
+    if (image2 && image3 && image9) {
+      setTimeout(() => {
+        image2.setAttribute("visible", "true");
+        image2.setAttribute(
+          "animation__position",
+          "property: position; to: -8 -1 10; dur: 4000; easing: linear; loop: false"
+        );
+        image2.setAttribute("scale", "3 3 3");
+        image3.setAttribute("visible", "true");
+        image9.setAttribute("visible", "true");
+        image3.setAttribute(
+          "animation__position",
+          "property: position; to: 8 -1 10; dur: 3000; easing: linear; loop: false"
+        );
+        image3.setAttribute("scale", "3 3 3");
+        image9.setAttribute(
+          "animation__position",
+          "property: position; to: -8 4 10; dur: 3000; easing: linear; loop: false"
+        );
+        image9.setAttribute("scale", "3 3 3");
 
-      if (image2 && image3 && image9) {
         setTimeout(() => {
-          image2.setAttribute("visible", "true");
-          image2.setAttribute(
-            "animation__position",
-            "property: position; to: -8 -1 10; dur: 4000; easing: linear; loop: false"
-          );
-          image2.setAttribute("scale", "3 3 3");
-          image3.setAttribute("visible", "true");
-          image9.setAttribute("visible", "true");
-          image3.setAttribute(
-            "animation__position",
-            "property: position; to: 8 -1 10; dur: 3000; easing: linear; loop: false"
-          );
-          image3.setAttribute("scale", "3 3 3");
-          image9.setAttribute(
-            "animation__position",
-            "property: position; to: -8 4 10; dur: 3000; easing: linear; loop: false"
-          );
-          image9.setAttribute("scale", "3 3 3");
-
-          setTimeout(() => {
-            image2.setAttribute("visible", "false");
-          }, 8001);
-        }, 1000);
-      }
-
-      if (image1) {
-        setTimeout(() => {
-          image1.setAttribute("visible", "true");
-          image1.setAttribute(
-            "animation__position",
-            "property: position; to: 0 2 -7; dur: 300; easing: linear; loop: false"
-          );
-          setTimeout(() => {
-            image1.setAttribute(
-              "animation__rotation",
-              "property: rotation; to: 0 360 0; dur: 300; easing: linear; loop: true"
-            );
-          }, 1000);
-
-          setTimeout(() => {
-            image1.setAttribute("visible", "false");
-          }, 5000);
-        }, 8002);
-      }
-
-      if (image5) {
-        setTimeout(() => {
-          image5.setAttribute("visible", "true");
-          image5.setAttribute("scale", "10 10 10");
-
-          setTimeout(() => {
-            image5.setAttribute(
-              "animation__position",
-              "property: position; to: 35 4 -200; dur: 8000; easing: linear; loop: false"
-            );
-          }, 1000);
-
-          setTimeout(() => {
-            image5.setAttribute("visible", "false");
-          }, 9001);
-        }, 13002);
-      }
-
-      if (image6) {
-        setTimeout(() => {
-          image6.setAttribute("visible", "true");
-
-          image6.setAttribute("scale", "10 10 10");
-
-          setTimeout(() => {
-            image6.setAttribute("visible", "false");
-          }, 4001);
-        }, 22004);
-      }
-
-      if (image4) {
-        setTimeout(() => {
-          image4.setAttribute("visible", "true");
-
-          image4.setAttribute("scale", "3 3 3");
-
-          setTimeout(() => {
-            image4.setAttribute(
-              "animation__position",
-              "property: position; to: -10 -4 -10; dur: 3000; easing: linear; loop: false"
-            );
-          }, 2001);
-
-          setTimeout(() => {
-            image4.setAttribute(
-              "animation__position",
-              "property: position; to: 5 4 -10; dur: 3000; easing: linear; loop: false"
-            );
-          }, 5001);
-
-          setTimeout(() => {
-            image4.setAttribute(
-              "animation__position",
-              "property: position; to: 5 4 50; dur: 3000; easing: linear; loop: false"
-            );
-          }, 8001);
-        }, 26004);
-      }
-    };
-
-    if (isRunning) {
-      setUpAnimations();
-    } else {
-      router.push(href);
+          image2.setAttribute("visible", "false");
+        }, 8001);
+      }, 1000);
     }
-  }, [isRunning]);
+
+    if (image1) {
+      setTimeout(() => {
+        image1.setAttribute("visible", "true");
+        image1.setAttribute(
+          "animation__position",
+          "property: position; to: 0 2 -7; dur: 300; easing: linear; loop: false"
+        );
+        setTimeout(() => {
+          image1.setAttribute(
+            "animation__rotation",
+            "property: rotation; to: 0 360 0; dur: 300; easing: linear; loop: true"
+          );
+        }, 1000);
+
+        setTimeout(() => {
+          image1.setAttribute("visible", "false");
+        }, 5000);
+      }, 8002);
+    }
+
+    if (image5) {
+      setTimeout(() => {
+        image5.setAttribute("visible", "true");
+        image5.setAttribute("scale", "10 10 10");
+
+        setTimeout(() => {
+          image5.setAttribute(
+            "animation__position",
+            "property: position; to: 35 4 -200; dur: 8000; easing: linear; loop: false"
+          );
+        }, 1000);
+
+        setTimeout(() => {
+          image5.setAttribute("visible", "false");
+        }, 9001);
+      }, 13002);
+    }
+
+    if (image6) {
+      setTimeout(() => {
+        image6.setAttribute("visible", "true");
+
+        image6.setAttribute("scale", "10 10 10");
+
+        setTimeout(() => {
+          image6.setAttribute("visible", "false");
+        }, 4001);
+      }, 22004);
+    }
+
+    if (image4) {
+      setTimeout(() => {
+        image4.setAttribute("visible", "true");
+
+        image4.setAttribute("scale", "3 3 3");
+
+        setTimeout(() => {
+          image4.setAttribute(
+            "animation__position",
+            "property: position; to: -10 -4 -10; dur: 3000; easing: linear; loop: false"
+          );
+        }, 2001);
+
+        setTimeout(() => {
+          image4.setAttribute(
+            "animation__position",
+            "property: position; to: 5 4 -10; dur: 3000; easing: linear; loop: false"
+          );
+        }, 5001);
+
+        setTimeout(() => {
+          image4.setAttribute(
+            "animation__position",
+            "property: position; to: 5 4 50; dur: 3000; easing: linear; loop: false"
+          );
+        }, 8001);
+      }, 26004);
+    }
+  };
 
   return (
     <a-scene keyboard-shortcuts="enterVR: false; exitVR: false">
