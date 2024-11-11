@@ -4,8 +4,8 @@ import top from "../../../public/univ.jpeg";
 import main from "../../public/maincontent.jpeg";
 import React, { useState, useEffect, Suspense } from "react";
 import { Adsense } from "@ctrl/react-adsense";
-
 import "bootstrap/dist/css/bootstrap.min.css";
+import ParticleImage from "../../features/demo";
 
 export default function Top() {
   return (
@@ -75,8 +75,8 @@ export default function Top() {
             className="maincontent"
             style={{ backgroundImage: `url(${top.src})` }}
           >
-            <div>
-              <img src="/inseki.png" alt="隕石" className="img-fluid" />
+            <div className="text-center">
+              <ParticleImage imageSrc="/susi.png" width={700} height={700} />
             </div>
             <div>
               <p className="description">
