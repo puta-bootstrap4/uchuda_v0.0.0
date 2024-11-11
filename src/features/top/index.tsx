@@ -77,7 +77,7 @@ export default function Top() {
             style={{ backgroundImage: `url(${top.src})` }}
           >
             <div className="text-center">
-              <ParticleImage imageSrc="/susi.png" width={700} height={700} />
+              <ParticleImage imageSrc="/susi.png" width={400} height={400} />
             </div>
             <div>
               <p className="description">
