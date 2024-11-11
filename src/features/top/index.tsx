@@ -76,9 +76,11 @@ export default function Top() {
             className="maincontent"
             style={{ backgroundImage: `url(${top.src})` }}
           >
-            <div className="text-center">
-              <ParticleImage imageSrc="/susi.png" width={400} height={400} />
-            </div>
+            <Grid xs={0} md={12}>
+              <div className="text-center">
+                <ParticleImage imageSrc="/susi.png" width={400} height={400} />
+              </div>
+            </Grid>
             <div>
               <p className="description">
                 Welcome!!
