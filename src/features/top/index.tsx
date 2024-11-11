@@ -16,6 +16,7 @@ export default function Top() {
             color: white;
             font-size: 50px;
             font-weight: bold;
+            margin-top: -90px;
           }
           #maincontentimg {
             width: 100%;
