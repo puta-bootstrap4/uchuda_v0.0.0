@@ -13,7 +13,7 @@ const ParticleImage: React.FC<ParticleImageProps> = ({
   imageSrc,
   width,
   height,
-  particleSize = 1, // デフォルトの粒子サイズを5に設定
+  particleSize = 10, // デフォルトの粒子サイズを5に設定
 }) => {
   const canvasRef = useRef<HTMLDivElement | null>(null);
   const app = useRef<PIXI.Application>();
