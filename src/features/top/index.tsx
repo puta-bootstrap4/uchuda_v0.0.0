@@ -73,7 +73,7 @@ export default function Top() {
         <Grid xs={0} md={2}></Grid>
         <Grid xs={12} md={12}>
           <div className="text-center">
-            <ParticleImage imageSrc="/susi.png" width={400} height={400} />
+            <ParticleImage imageSrc="/susi.png" width={300} height={300} />
           </div>
         </Grid>
         <Grid xs={12} md={12}>
