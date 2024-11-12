@@ -71,16 +71,16 @@ export default function Top() {
         <Grid xs={0} md={2}></Grid>
         <Grid xs={0} md={2}></Grid>
         <Grid xs={0} md={2}></Grid>
+        <Grid xs={12} md={0}>
+          <div className="text-center">
+            <ParticleImage imageSrc="/susi.png" width={400} height={400} />
+          </div>
+        </Grid>
         <Grid xs={12} md={12}>
           <div
             className="maincontent"
             style={{ backgroundImage: `url(${top.src})` }}
           >
-            <Grid xs={0} md={12}>
-              <div className="text-center">
-                <ParticleImage imageSrc="/susi.png" width={400} height={400} />
-              </div>
-            </Grid>
             <div>
               <p className="description">
                 Welcome!!
