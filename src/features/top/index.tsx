@@ -12,12 +12,6 @@ export default function Top() {
     <>
       <style jsx>
         {`
-          .description {
-            color: white;
-            font-size: 50px;
-            font-weight: bold;
-            margin-top: -90px;
-          }
           #maincontentimg {
             width: 100%;
             height: 100px;
@@ -58,7 +52,7 @@ export default function Top() {
           }
           footer {
             color: white;
-            padding-top: 200px;
+            margin-bottom: 0px;
           }
           #text-color {
             color: yellow;
@@ -72,22 +66,17 @@ export default function Top() {
         <Grid xs={0} md={2}></Grid>
         <Grid xs={0} md={2}></Grid>
         <Grid xs={12} md={12}>
-          <div className="text-center">
-            <ParticleImage imageSrc="/susi.png" width={300} height={300} />
+          <div>
+            <ParticleImage imageSrc="/susi.png" />
           </div>
         </Grid>
+
         <Grid xs={12} md={12}>
+          <div className="h-100"></div>
           <div
             className="maincontent"
             style={{ backgroundImage: `url(${top.src})` }}
           >
-            <div>
-              <p className="description">
-                Welcome!!
-                <br />
-                宇宙一ふざけたタイピングアプリをどうぞお試しあれ
-              </p>
-            </div>
             <div>
               <p id="text-color">
                 注意：周囲をみて安全を確認してからプレイしてください。
