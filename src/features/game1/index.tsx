@@ -5,6 +5,9 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/app/store";
+import { increment, reset } from "@/features/finish/counter/counterSlice";
 
 const VRInputComponent: React.FC = () => {
   const targetChar = useMemo(() => {
@@ -31,7 +34,6 @@ const VRInputComponent: React.FC = () => {
     ];
   }, []);
   const searchParams = useSearchParams();
-
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [charArray, setCharArray] = useState(
     targetChar[currentPhraseIndex].split("")
@@ -63,6 +65,8 @@ const VRInputComponent: React.FC = () => {
   params.append("key1", `${missCountRef.current}`);
   params.append("key2", `${countRef.current}`);
   const href = `/finish/?${params}`;
+  const counts = useSelector((state: RootState) => state.counter.score);
+  const dispatch = useDispatch();
   useEffect(() => {
     const handleSpacePress = (event: KeyboardEvent) => {
       if (event.code === "Space") {
@@ -140,6 +144,7 @@ const VRInputComponent: React.FC = () => {
         //入力した文字が正解の時
         if (inputChar === expectedChar) {
           //あるワードの次の文字に進む
+          dispatch(increment());
           setCurrentCharIndex((prev) => prev + 1);
           //単語を入力し終えたらという条件
           if (currentCharIndex + 1 >= charArray.length) {

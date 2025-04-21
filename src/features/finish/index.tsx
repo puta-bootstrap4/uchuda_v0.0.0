@@ -7,12 +7,15 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Adsense } from "@ctrl/react-adsense";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "@/app/store";
+import { increment, reset } from "@/features/finish/counter/counterSlice";
 export default function Finish() {
   const [message, setMessage] = useState("");
   const [message2, setMessage2] = useState("");
-
+  const count = useSelector((State: RootState) => State.counter.score);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -78,17 +81,22 @@ export default function Finish() {
             style={{ backgroundImage: `url(${main.src})` }}
           >
             <div className="result">
-              <p>ミスタイプ数は{message}です</p>
-              <p>得点は{message2}です</p>
+              <p>得点は{count}です</p>
             </div>
             <div className="mb-3">
-              <Button href="/" variant="contained" color="primary">
+              <Button
+                href="/"
+                variant="contained"
+                color="primary"
+                onClick={() => dispatch(reset())}
+              >
                 HOME
               </Button>
               <Button
                 href="/game?playSound=true"
                 variant="contained"
                 color="primary"
+                onClick={() => dispatch(reset())}
               >
                 音ありでPLAY(PCのみ)
               </Button>
@@ -96,6 +104,7 @@ export default function Finish() {
                 href="/game/?playSound=false"
                 variant="contained"
                 color="primary"
+                onClick={() => dispatch(reset())}
               >
                 音なしでPLAY(PCのみ)
               </Button>
@@ -103,10 +112,16 @@ export default function Finish() {
                 href="/movie?play=true"
                 variant="contained"
                 color="secondary"
+                onClick={() => dispatch(reset())}
               >
                 映像のみ音あり(スマホ・PC)
               </Button>
-              <Button href="/movie" variant="contained" color="secondary">
+              <Button
+                href="/movie"
+                variant="contained"
+                color="secondary"
+                onClick={() => dispatch(reset())}
+              >
                 映像のみ音なし(スマホ・PC)
               </Button>
             </div>
